@@ -1,0 +1,32 @@
+{
+  "name": "PARKit – Smart Parking",
+  "short_name": "PARKit",
+  "description": "AI-powered smart parking platform. Find it. Park it. Move on.",
+  "id": "com.parkit.smartparking",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#10232B",
+  "theme_color": "#10232B",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
+

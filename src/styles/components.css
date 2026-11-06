@@ -1,0 +1,158 @@
+/* Reusable design-system utility classes */
+.parkit-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-card);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.parkit-card-interactive {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-card);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.parkit-card-interactive:hover {
+  transform: translateY(-2px);
+  border-color: #2563EB;
+  box-shadow: 0 8px 24px -4px rgba(37, 99, 235, 0.12);
+}
+
+.parkit-elevated {
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Status Badges */
+.badge-empty {
+  background-color: rgba(22, 163, 74, 0.12);
+  color: #16A34A;
+  border: 1px solid rgba(22, 163, 74, 0.25);
+}
+
+.badge-occupied {
+  background-color: rgba(220, 38, 38, 0.12);
+  color: #DC2626;
+  border: 1px solid rgba(220, 38, 38, 0.25);
+}
+
+.badge-uncertain {
+  background-color: rgba(217, 119, 6, 0.12);
+  color: #D97706;
+  border: 1px solid rgba(217, 119, 6, 0.25);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2563EB;
+}
+
+/* =========================================================================
+   PARKit Leaflet Map Layout & Container Containment
+   Ensures map stays strictly inside designated container with zero spillover
+   ========================================================================= */
+
+.parkit-map-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+  z-index: 0;
+  isolation: isolate;
+}
+
+.parkit-map-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  z-index: 0;
+  isolation: isolate;
+}
+
+/* Constrain Leaflet core container and elements */
+.parkit-map-container .leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+  overflow: hidden !important;
+  z-index: 0 !important;
+  font-family: inherit !important;
+  border-radius: inherit !important;
+}
+
+/* Ensure Leaflet controls and attribution stay contained within map */
+.parkit-map-container .leaflet-top,
+.parkit-map-container .leaflet-bottom {
+  position: absolute !important;
+  z-index: 10 !important;
+  pointer-events: none !important;
+}
+
+.parkit-map-container .leaflet-control {
+  z-index: 10 !important;
+  pointer-events: auto !important;
+}
+
+/* Confine Panes so they never exceed container stacking context */
+.parkit-map-container .leaflet-pane {
+  z-index: 1 !important;
+}
+
+.parkit-map-container .leaflet-tile-pane {
+  z-index: 2 !important;
+}
+
+.parkit-map-container .leaflet-overlay-pane {
+  z-index: 3 !important;
+}
+
+.parkit-map-container .leaflet-shadow-pane {
+  z-index: 4 !important;
+}
+
+.parkit-map-container .leaflet-marker-pane {
+  z-index: 5 !important;
+}
+
+.parkit-map-container .leaflet-tooltip-pane {
+  z-index: 6 !important;
+}
+
+.parkit-map-container .leaflet-popup-pane {
+  z-index: 7 !important;
+}
+
+/* Popup and tooltip styling within container */
+.parkit-map-container .leaflet-popup {
+  z-index: 7 !important;
+}
+
+.parkit-map-container .leaflet-popup-content-wrapper {
+  border-radius: 1rem !important;
+  box-shadow: 0 10px 25px -5px rgba(22, 58, 112, 0.25) !important;
+  border: 1px solid #CBD5E1 !important;
+  padding: 4px !important;
+}
+
+.parkit-map-container .leaflet-popup-content {
+  margin: 8px 10px !important;
+  line-height: 1.4 !important;
+}
+
+.parkit-map-container .leaflet-popup-tip {
+  background: #FFFFFF !important;
+}
